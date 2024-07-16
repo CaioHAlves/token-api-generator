@@ -8,7 +8,7 @@ export class GenerateToken {
 
     try {
       const token = jwt.sign(req.body, String(secret) || process.env.JWT!, {
-        expiresIn: String(expires) || '8h'
+        expiresIn: expires ? String(expires) || '8h'
       })
 
       return res.status(201).json({
