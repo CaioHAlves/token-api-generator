@@ -4,11 +4,11 @@ import jwt from 'jsonwebtoken'
 export class GenerateToken {
   static async create(req: Request, res: Response) {
 
-    const { expiress, secret } = req.query
+    const { expires, secret } = req.query
 
     try {
       const token = jwt.sign(req.body, String(secret) || process.env.JWT!, {
-        expiresIn: String(expiress) || '8h'
+        expiresIn: String(expires) || '8h'
       })
 
       return res.status(201).json({
