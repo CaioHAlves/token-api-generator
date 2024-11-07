@@ -7,9 +7,14 @@ export class GenerateToken {
     const { expires, secret } = req.query as { expires?: string, secret?: string };
 
     try {
-      const token = jwt.sign(req.body, String(secret) || process.env.JWT!, {
-        expiresIn: expires ? String(expires) || '8h'
-      })
+      const token = jwt.sign(
+        req.body,
+        String(secret) || process.env.JWT!,
+        {
+          expiresIn: expires ? String(expires) : '8h'
+        }
+      );
+      
 
       return res.status(201).json({
         token: token
