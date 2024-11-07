@@ -7,12 +7,12 @@
     "forceConsistentCasingInFileNames": true, // Força consistência no uso de maiúsculas e minúsculas
     "strict": true,                        // Ativa todas as verificações de tipo estritas
     "skipLibCheck": true,                  // Ignora verificação de tipos em arquivos de definição
-    "outDir": "./dist",                    // Diretório de saída para os arquivos compilados
+    "outDir": "./build",                    // Diretório de saída para os arquivos compilados
     "rootDir": "./src",                    // Diretório raiz do projeto
     "resolveJsonModule": true,             // Permite a importação de módulos JSON
     "typeRoots": ["./node_modules/@types"], // Define os diretórios de tipos
     "noImplicitAny": false                 // Define `false` se precisar de mais flexibilidade com `any`
   },
   "include": ["src/**/*.ts"],             // Inclui todos os arquivos TypeScript do diretório src
-  "exclude": ["node_modules", "dist"]     // Exclui esses diretórios da compilação
+  "exclude": ["node_modules", "build"]     // Exclui esses diretórios da compilação
 }
