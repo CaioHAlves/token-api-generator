@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 export class GenerateToken {
   static async create(req: Request, res: Response) {
 
-    const { expires, secret } = req.query
+    const { expires, secret }: { expires?: string, secret?: string } = req.query;
 
     try {
       const token = jwt.sign(req.body, String(secret) || process.env.JWT!, {
