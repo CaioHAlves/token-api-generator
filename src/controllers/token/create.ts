@@ -12,7 +12,7 @@ export class GenerateToken {
       })
 
       return res.status(201).json({
-        token
+        token: token
       })
     } catch (error) {
       return res.status(400).json({
